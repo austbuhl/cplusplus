@@ -3,57 +3,21 @@
 <h2 style="text-align: center">{{ search | title}}</h2>
 
 <div class="row">
-  <div class="col s4">
-    <div class="card">
-      <div class="card-image">
-        <a href="/"
-          ><img
-            src="https://cf.ltkcdn.net/dogs/images/orig/235430-2000x1332-australian-shepherd-puppy.jpg"
-            alt=""
-        /></a>
-      </div>
-      <div class="card-content">
-        <p>TEST</p>
-      </div>
-      <div class="card-action">
-        <a href="/">View Listing: Price TEST PRICE</a>
-      </div>
-    </div>
-  </div>
-  <div class="col s4">
-    <div class="card">
-      <div class="card-image">
-        <a href="/"
-          ><img
-            src="https://cf.ltkcdn.net/dogs/images/orig/235430-2000x1332-australian-shepherd-puppy.jpg"
-            alt=""
-        /></a>
-      </div>
-      <div class="card-content">
-        <p>TEST</p>
-      </div>
-      <div class="card-action">
-        <a href="/">View Listing: Price TEST PRICE</a>
-      </div>
-    </div>
-  </div>
-  <div class="col s4">
-    <div class="card">
-      <div class="card-image">
-        <a href="/"
-          ><img
-            src="https://cf.ltkcdn.net/dogs/images/orig/235430-2000x1332-australian-shepherd-puppy.jpg"
-            alt=""
-        /></a>
-      </div>
-      <div class="card-content">
-        <p>TEST</p>
-      </div>
-      <div class="card-action">
-        <a href="/">View Listing: Price TEST PRICE</a>
-      </div>
-    </div>
-  </div>
-</div>
+  {% for listing in final_listings %}
 
+  <div class="col s4">
+    <div class="card">
+      <div class="card-image">
+        <a href="{{listing.1}}"><img src="{{listing.3}}" alt="" /></a>
+      </div>
+      <div class="card-content">
+        <p>{{listing.0}}</p>
+      </div>
+      <div class="card-action">
+        <a href="{{listing.1}}">View Listing: Price {{listing.2}}</a>
+      </div>
+    </div>
+  </div>
+  {% endfor%}
+</div>
 {% endblock content%}
